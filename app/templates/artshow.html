@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+<!--ARTSHOW -->
+{%block body%}
+<h1 class='body-title'>ARTSHOW</h1>
+
+<hr>
+this is artshow
+<div>This is the array: {{submissions}} </div>
+<hr.
+
+
+{% for submission in submissions %}
+        <div><p>{{ submission.author.username }} says: <b>{{ submission.body }}</b></p></div>
+{% endfor %}
+
+{%endblock%}
