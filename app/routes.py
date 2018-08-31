@@ -1,5 +1,6 @@
 from flask import render_template, flash, redirect, url_for
 from app import app, db
+from .models import Submission
 #from . import submission
 #from app.forms import LoginForm
 
@@ -16,14 +17,14 @@ def login():
         return redirect(url_for('index'))
     return render_template('login.html',  title='Sign In', form=form)
 
-@app.route("/blog/<user>")
-def blog():
-    return render_template('blog.html', title='Home', user=user, posts=posts)
+#@app.route("/blog/<user>")
+#def blog():
+#    return render_template('blog.html', title='Home', user=user, posts=posts)
 
 @app.route("/artshow")
 def artshow():
     submissions = Submission.query.all()
-    return render_template('artshow.html', title='artshow')
+    return render_template('artshow.html', title='artshow', submissions='submissions')
                            
 @app.route("/submission")
 def submission():

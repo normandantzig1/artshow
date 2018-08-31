@@ -8,7 +8,7 @@ class User(db.Model):
     username = db.Column(db.String(80), index=True, unique=True, nullable=False)
     password_hash=db.Column(db.String(120), index=True, unique=True, nullable=False)
     email = db.Column(db.String(120), index=True, unique=True, nullable=False)
-    posts=db.relationship('Posts', backref='Author', lazy='dynamic')
+    submissions =db.relationship('Submission', backref='Author', lazy='dynamic')
     
     def __repr__(self):
         return '<User {}>'.format(self.username)
